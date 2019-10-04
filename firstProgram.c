@@ -7,7 +7,7 @@ int main(){
 	printf("Enter the Tax : ");
 	scanf("%f",&tax);
 	int dis = amount - (amount*tax)/100;
-	printf("%d",dis);
+	printf("Net Amount : %d",dis);
 	
 	//return 0;
 }

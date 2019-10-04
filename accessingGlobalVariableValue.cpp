@@ -10,12 +10,14 @@ int main()
 {
 	// 1. we are updating value of Global VAriable
 	// 2. when age is created in the main as well, it will update it
-	//age = 33;
 	
 	extern int age;
 	
+	printf("Global age is: %d\n",age);
+	age = 15;
+	
 	printf("age is: %d\n",age);
-
+	
 	return 0;
 }
 
