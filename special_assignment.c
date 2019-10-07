@@ -55,23 +55,38 @@ int sameyear(){
     return day_diff;
 }
 
-void calculateDayDiff(){
-    int result;
+void date_time_format(int inputDays){
+   
+    int hrs = inputDays * 24;
+    int mins = inputDays * 1440;
+    int seconds = inputDays * 86400;
+    printf("Time Difference b/w two dates: %d hours, %d mins, %d seconds\n",hrs,mins,seconds);
+   
+    int years = inputDays/365;
+    int weeks = (inputDays%365)/7;
+    int days = (inputDays%365)%365;
+    printf("Date format: %d years %d weeks %d days",years,weeks,days);
+   
+}
 
+void calculateDayDiff(){
+    int result=0;
     if(D1.year <= D2.year){
         if(D1.year != D2.year){
             result = diffyear();
-            printf("\nSo day difference b/w these two date is: %d",result);
+            printf("\nSo day difference b/w these two date is: %d\n",result);
+            date_time_format(result);
         }
         else {
             result = sameyear();
-            printf("\nSo day difference b/w these two date is: %d",result);
+            printf("\nSo day difference b/w these two date is: %d\n",result);
+            date_time_format(result);
         }
     }
     else{
         printf("start date should be less than end date......");
         printf("\nSo day difference b/w these two date is: 0 days");
-    }    
+    }   
 }
 
 int main()
@@ -84,7 +99,7 @@ int main()
 
     calculateDayDiff();
 
-    //printf("Start Date : %d %d %d \nEnd Date : %d %d %d\n",D1.day,D1.month,D1.year,D2.day,D2.month,D2.year);
-       
+    //printf("start date: %d %d %d \nEnd date: %d %d %d",D1.day,D1.month,D1.year,D2.day,D2.month,D2.year);
+
     return 0;
 }
